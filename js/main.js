@@ -168,21 +168,20 @@ function getFetch() {
 
       
       async function getEvolution() {
-        //get pokedata
-        const poke2 = document.querySelector("input").value;
+        let evolutionImages = []; //pokemon image urls
+        let evolutionNames = []; //pokemon evolution chain names
+        //
+        const poke2 = document.querySelector("input").value; //get pokedata
         const url = "https://pokeapi.co/api/v2/pokemon/" + poke2.toLowerCase();
-        //original pokemon
-        const res1 = await fetch(url);
-        const pokemonObj = await res1.json();
-        //species data
-        const res2 = await fetch(pokemonObj.species.url);
-        const pokedex = await res2.json();
-        //evolution chain data
-        const res3 = await fetch(pokedex.evolution_chain.url); 
-        const evolutionChain = await res3.json();
-        //empty containers to be pushed into
-        let evolutionImages = []; //poke
-        let evolutionNames = [];
+        //
+        const originalRes = await fetch(url); //original pokemon
+        const pokemonObj = await originalRes.json();
+        //
+        const speciesRes = await fetch(pokemonObj.species.url); //species data
+        const pokedex = await speciesRes.json();
+        //
+        const evolutionRes = await fetch(pokedex.evolution_chain.url); //evolution chain data
+        const evolutionChain = await evolutionRes.json();
 
         if (evolutionChain.chain.evolves_to.length < 1) {
           evolutionImages.push(pokemonObj.sprites.front_default);
@@ -192,17 +191,13 @@ function getFetch() {
           await multiplePokes(evolutionChain.chain.species.name, evolutionImages)
           //Has evolution
           let pathOne = [];
-          for (const index of evolutionChain.chain.evolves_to) {
-            //Multi evolutions
+          for (const index of evolutionChain.chain.evolves_to) {//Multi evolutions
             pathOne.push(index.species.name);
             await multiplePokes(index.species.name, evolutionImages); 
-          }
-
-          //Get the images
-          evolutionNames.push(pathOne.join(" or "));
-      
-          //Evolution ception
-          if (evolutionChain.chain.evolves_to[0].evolves_to.length > 0) {
+        }
+        //Get the images
+        evolutionNames.push(pathOne.join(" or "))
+        if (evolutionChain.chain.evolves_to[0].evolves_to.length > 0) {//Evolution ception
             let pathTwo = [];
             for (const index of evolutionChain.chain.evolves_to[0].evolves_to) {
               //If more than one, more fetches
