@@ -90,7 +90,12 @@ function getFetch() {
         }
         data.types.forEach((el) => pokemon.type.push(el.type.name)); //pokemon typings into object;
         data.abilities.forEach((el) => pokemon.abilities.push(el.ability.name)); //pokemon abilities into object
-        data.moves.forEach((el) => pokemon.moves.push(el.move.name)); //pokemon moves into object
+        data.moves.forEach((el) => {
+            if(el.move.name === "psychic") //accounts for the move psychic
+                pokemon.moves.push(`${el.move.name}*`)
+            else
+                pokemon.moves.push(el.move.name)
+            }); //pokemon moves into object
 
         console.log(pokemon) //new local pokemon
         newPokemon = pokemon; //create a global pokemon object
@@ -245,7 +250,6 @@ function getFetch() {
       
       function checkColor(){
         let elements = document.querySelectorAll('ul > li');
-
         for (let elem of elements) {
             if(elem.innerHTML === "normal")
                 elem.style.background = "#a8a897"
