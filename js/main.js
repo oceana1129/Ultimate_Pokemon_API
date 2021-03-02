@@ -107,6 +107,7 @@ function getFetch() {
         createStatCard()
         createTypeCard()
         createMoveCard()
+        checkColor()
       })
       .catch(err => {
           console.log(`error ${err}`) //catches any errors
@@ -194,8 +195,10 @@ function getFetch() {
         let evolutionImages = []; //pokemon image urls
         let evolutionNames = []; //pokemon evolution chain names
         //
-        const poke2 = document.querySelector("input").value; //get pokedata
-        const url = "https://pokeapi.co/api/v2/pokemon/" + poke2.toLowerCase();
+        const choice = document.querySelector("input").value; //get pokedata
+        
+        const url = "https://pokeapi.co/api/v2/pokemon/" + choice.toLowerCase();
+        
         //
         const originalRes = await fetch(url); //original pokemon
         const pokemonObj = await originalRes.json();
@@ -237,7 +240,7 @@ function getFetch() {
         console.log(evolutionNames)
         console.log(evolutionImages);
         createEvolutionCard()
-        checkColor()
+        
       }
       
       //Poke Images
