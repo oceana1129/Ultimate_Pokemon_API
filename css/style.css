@@ -90,15 +90,7 @@ h4{
   font-size: 2.25rem;
   text-align: center;
 }
-
-
 /*
-  ========================================
-  BACKGROUNDS
-  ========================================
-*/
-
-  /*
   ========================================
   SPECIFIC ITEMS
   ========================================
@@ -121,7 +113,7 @@ input{
   width: 97.5%;
   justify-self: center;
 }
-.middle, input{
+.middle, input,.imgContainer, .card ul, .card h2, #evolution span, .logoContainer img{
   width: 100%;
 }
 .inputContainer{
@@ -144,25 +136,17 @@ button{
 .buttons{
   display: flex;
 }
-.center{
+.center,#pokedex .card, #stat .card, #sprites .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#pokedex .card, #stat .card{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 #evolution .card{
   text-align: center;
 }
 #sprites .card{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 }
 .card{
     min-width: 300px;
@@ -174,7 +158,6 @@ button{
     flex-wrap: wrap;
 }
 .imgContainer{
-  width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -190,15 +173,11 @@ button{
 #moves li{
   max-width: 250px;
 }
-.container h4{
-  text-align: right;
-}
 #pokedex img{
   justify-self: center;
   align-self: center;
 }
 .card ul, .card h2, #evolution span{
-  width: 100%;
   text-align: center;
 }
 ul{
@@ -232,7 +211,6 @@ ul li:before{
     align-items: center;
 }
 .logoContainer img{
-    width: 100%;
     height: auto;
 }
 .audioContainer{
@@ -266,7 +244,6 @@ ul li:before{
   cursor: pointer;
   transition: 0.2s;
 }
-
 input:active, input:focus{
   border: 3px solid black;
   border-top: none;
@@ -277,12 +254,10 @@ input:active, input:focus{
 ::-webkit-scrollbar {
 width: 18px;
 }
-/* Track */
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {/* Track */
 background: #F0F1F7;
 }
-/* Handle */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {/* Handle */
 background: #ceced4;
 }
 button:hover{
