@@ -109,7 +109,7 @@ input{
   border-top: none;
   border-bottom: none;
 }
-.inputContainer{
+.inputContainer, body{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,20 +121,18 @@ input{
   width: 97.5%;
   justify-self: center;
 }
+.middle, input{
+  width: 100%;
+}
+.inputContainer{
+  width: 80%;
+}
 button{
   background: none;
   border: none;
   transition: 0.1s;
 }
-button:hover{
-  opacity: 0.7;
-  transition: 0.1s;
-  cursor: pointer; 
-}
-button:active, button:focus{
-  outline: none;
-  border: none;
-}
+
 /*
   ========================================
   MAIN LAYOUT
@@ -152,7 +150,7 @@ button:active, button:focus{
     justify-content: center;
     align-items: center;
 }
-#pokedex .card, #stat .card, #evolution .card, #evolution .card div{
+#pokedex .card, #stat .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,18 +166,29 @@ button:active, button:focus{
 }
 .card{
     min-width: 300px;
+    max-width: 900px;
     width: 60vw;
     height: auto;
     padding: 1rem;
     background: #e1e3eb;
     flex-wrap: wrap;
 }
-.container{
-  width: 50%;
+.imgContainer{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.container, #moves li{
+  width: 47%;
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-flow: wrap;
   padding: .5rem 0;
+}
+#moves li{
+  max-width: 250px;
 }
 .container h4{
   text-align: right;
@@ -188,7 +197,7 @@ button:active, button:focus{
   justify-self: center;
   align-self: center;
 }
-.card h2{
+.card ul, .card h2, #evolution span{
   width: 100%;
   text-align: center;
 }
@@ -227,7 +236,9 @@ ul li:before{
     height: auto;
 }
 .audioContainer{
-  width: 100px;
+  max-width: 100px;
+  width: 10%;
+  min-width: 50px;
   height: 100px;
   position: fixed;
   right: 0;
@@ -238,7 +249,10 @@ ul li:before{
 .audioContainer img{
   height: 50%;
 }
-
+#pokedex .card, #stat .card, #moves ul{
+  display: flex;
+  flex-direction: row;
+}
 /*
   ========================================
   INTERACTIVE
@@ -270,6 +284,15 @@ background: #F0F1F7;
 /* Handle */
 ::-webkit-scrollbar-thumb {
 background: #ceced4;
+}
+button:hover{
+  opacity: 0.7;
+  transition: 0.1s;
+  cursor: pointer; 
+}
+button:active, button:focus{
+  outline: none;
+  border: none;
 }
 /*
   ========================================

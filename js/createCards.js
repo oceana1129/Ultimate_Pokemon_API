@@ -9,9 +9,12 @@ function createPokedexCard(){
     title.innerHTML = "--- Pokedex ---"
     card.append(title)
 
+    let imgContainer = document.createElement('div')
+    imgContainer.classList.add('imgContainer')
+    card.append(imgContainer)
     let img = document.createElement('img')
     img.src = newPokemon.imgDefaultFront
-    card.append(img)
+    imgContainer.appendChild(img)
 
     let nameContainer = document.createElement('div')
     nameContainer.classList.add('container')
@@ -108,9 +111,12 @@ function createStatCard(){
     title.innerHTML = `--- Stats ---`
     card.append(title)
 
+    let imgContainer = document.createElement('div')
+    imgContainer.classList.add('imgContainer')
+    card.append(imgContainer)
     let img = document.createElement('img')
     img.src = newPokemon.imgDefaultFront
-    card.append(img)
+    imgContainer.appendChild(img)
 
     let hpContainer = document.createElement('div')
     hpContainer.classList.add('container')
@@ -243,7 +249,7 @@ function createEvolutionCard(){
     evolutionContainer.append(card)
 
     let title = document.createElement('h2')
-    title.innerHTML = "--- Evolves ---"
+    title.innerHTML = "--- Evolutions ---"
     card.append(title)
 
     let evolutionNameContainer = document.createElement('span')
