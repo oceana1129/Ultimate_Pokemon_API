@@ -15,3 +15,9 @@ function playAudio(){
         song.play();
     }
 }
+// plink.type = 'audio/mpeg';
+// plink.src = 'assets/Pokemon_Plink_Noise.mp3';//Audio file source url
+// document.querySelector('button').addEventListener('click', playBlip)
+// function playBlip(){
+//     plink.play()
+// }

@@ -299,5 +299,13 @@ button:active, button:focus{
   MEDIA QUERIES
   ========================================
 */
-
+@media only screen 
+and (max-device-width : 600px){
+  html{
+    font-size: 55%;
+  }
+  .audioContainer{
+    height: 75px;
+  }
+}
 
