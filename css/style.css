@@ -152,11 +152,14 @@ button:active, button:focus{
     justify-content: center;
     align-items: center;
 }
-#pokedex .card, #stat .card{
+#pokedex .card, #stat .card, #evolution .card, #evolution .card div{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#evolution .card{
+  text-align: center;
 }
 #sprites .card{
   display: flex;

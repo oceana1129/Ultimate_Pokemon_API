@@ -234,3 +234,27 @@ function createMoveCard(){
         ul.appendChild(li)
     })
 }
+
+function createEvolutionCard(){
+    let evolutionContainer = document.querySelector('#evolution')
+
+    let card = document.createElement('div')
+    card.classList.add('card')
+    evolutionContainer.append(card)
+
+    let title = document.createElement('h2')
+    title.innerHTML = "--- Evolves ---"
+    card.append(title)
+
+    let evolutionNameContainer = document.createElement('span')
+    evolutionNameContainer.innerHTML = newPokemon.evolutionNamesAll.join(' -> ')
+    card.append(evolutionNameContainer)
+
+    let evolutionImagesContainer = document.createElement('div')
+    card.append(evolutionImagesContainer)
+    newPokemon.evolutionImagesAll.forEach( obj => {
+        const img = document.createElement('img')
+        img.src = obj
+        evolutionImagesContainer.appendChild(img)
+    })
+}

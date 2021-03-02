@@ -84,7 +84,9 @@ function getFetch() {
             statDefense: data.stats[2].base_stat,
             statSpecialAttack: data.stats[3].base_stat,
             statSpecialDefense: data.stats[4].base_stat,
-            statSpeed: data.stats[5].base_stat
+            statSpeed: data.stats[5].base_stat,
+            evolutionNamesAll: [],
+            evolutionImagesAll: []
         }
         data.types.forEach((el) => pokemon.type.push(el.type.name)); //pokemon typings into object;
         data.abilities.forEach((el) => pokemon.abilities.push(el.ability.name)); //pokemon abilities into object
@@ -121,12 +123,14 @@ function getFetch() {
         let type = document.querySelector('#type')
         let sprites = document.querySelector('#sprites')
         let stat = document.querySelector('#stat')
+        let evolution = document.querySelector('#evolution')
         if(this.value == "pokedex") {
             pokedex.style.display = "block"
             moves.style.display = "none"
             type.style.display = "none"
             sprites.style.display = "none"
             stat.style.display = "none"
+            evolution.style.display = "none"
             return newPokemon
         }if(this.value == "sprites") {
             pokedex.style.display = "none"
@@ -134,6 +138,7 @@ function getFetch() {
             type.style.display = "none"
             sprites.style.display = "block"
             stat.style.display = "none"
+            evolution.style.display = "none"
             return newPokemon
         }if(this.value == "typings") {
             pokedex.style.display = "none"
@@ -141,6 +146,7 @@ function getFetch() {
             type.style.display = "block"
             sprites.style.display = "none"
             stat.style.display = "none"
+            evolution.style.display = "none"
             return newPokemon
         }if(this.value == "stat") {
             pokedex.style.display = "none"
@@ -148,6 +154,7 @@ function getFetch() {
             type.style.display = "none"
             sprites.style.display = "none"
             stat.style.display = "block"
+            evolution.style.display = "none"
             return newPokemon
         }if(this.value == "moves") {
             pokedex.style.display = "none"
@@ -155,13 +162,24 @@ function getFetch() {
             type.style.display = "none"
             sprites.style.display = "none"
             stat.style.display = "none"
+            evolution.style.display = "none"
             return newPokemon
-        }else{
+        }if(this.value == "evolution") {
+            pokedex.style.display = "none"
+            moves.style.display = "none"
+            type.style.display = "none"
+            sprites.style.display = "none"
+            stat.style.display = "none"
+            evolution.style.display = "block"
+            return newPokemon
+        }
+        else{
             pokedex.style.display = "block"
             moves.style.display = "block"
             type.style.display = "block"
             sprites.style.display = "block" 
             stat.style.display = "block"
+            evolution.style.display = "block"
             return newPokemon
         }
       });
@@ -207,9 +225,13 @@ function getFetch() {
             evolutionNames.push(pathTwo.join(" or "));
           }
         }
-    
+        // Object.entries(evolutionNames).forEach(([key,value]) => { newPokemon[key] = value })
+        // newPokemon.evolutionNames.push(evoltuionsNames)
+        evolutionNames.forEach((el) => newPokemon.evolutionNamesAll.push(el));
+        evolutionImages.forEach((el) => newPokemon.evolutionImagesAll.push(el));
         console.log(evolutionNames)
         console.log(evolutionImages);
+        createEvolutionCard()
       }
       
       //Poke Images
