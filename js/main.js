@@ -232,6 +232,7 @@ function getFetch() {
         console.log(evolutionNames)
         console.log(evolutionImages);
         createEvolutionCard()
+        checkColor()
       }
       
       //Poke Images
@@ -242,4 +243,45 @@ function getFetch() {
       }
 
       
- 
+      function checkColor(){
+        let elements = document.querySelectorAll('ul > li');
+
+        for (let elem of elements) {
+            if(elem.innerHTML === "normal")
+                elem.style.background = "#a8a897"
+            if(elem.innerHTML === "fire")
+                elem.style.background = "#ff4422"
+            if(elem.innerHTML === "water")
+                elem.style.background = "#3399ff"
+            if(elem.innerHTML === "electric")
+                elem.style.background = "#ffcc33"
+            if(elem.innerHTML === "grass")
+                elem.style.background = "#77cc55"
+            if(elem.innerHTML === "ice")
+                elem.style.background = "#66ccff"
+            if(elem.innerHTML === "fighting")
+                elem.style.background = "#b05040"
+            if(elem.innerHTML === "poison")
+                elem.style.background = "#aa5599"
+            if(elem.innerHTML === "ground")
+                elem.style.background = "#ddbb55"
+            if(elem.innerHTML === "flying")
+                elem.style.background = "#8899ff"
+            if(elem.innerHTML === "psychic")
+                elem.style.background = "#ff5599"
+            if(elem.innerHTML === "bug")
+                elem.style.background = "#aabb22"
+            if(elem.innerHTML === "rock")
+                elem.style.background = "#bbaa66"
+            if(elem.innerHTML === "ghost")
+                elem.style.background = "#6666bb"
+            if(elem.innerHTML === "dragon")
+                elem.style.background = "#6154c2"
+            if(elem.innerHTML === "dark")
+                elem.style.background = "#775544"
+            if(elem.innerHTML === "steel")
+                elem.style.background = "#aaaabb"
+            if(elem.innerHTML === "fairy")
+                elem.style.background = "#ee99ee"
+          }
+    }

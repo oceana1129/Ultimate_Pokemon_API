@@ -264,3 +264,4 @@ function createEvolutionCard(){
         evolutionImagesContainer.appendChild(img)
     })
 }
+
