@@ -3,13 +3,13 @@ window.addEventListener("keyup", (e) => { //click 'enter' on keyboard' to start 
        e.preventDefault();
        document.querySelector("button").click();
     }
-  });
-document.querySelector('button').addEventListener('click', getFetch) //start the fetch
+  }); 
+document.querySelector('button').addEventListener('click', getFetch); //start the fetch
 
 let newPokemon; //empty global pokemon element for manipulation
 
 function getFetch() {
-  let choice = document.querySelector('input').value.toLowerCase() //user input
+  let choice = document.querySelector('input').value.toLowerCase(); //user input
 
   if(choice === "giratina"){
         choice = "giratina-altered"
@@ -59,7 +59,7 @@ function getFetch() {
       choice = "urshifu-single-strike"
   }
 
-  const url = 'https://pokeapi.co/api/v2/pokemon/'+ `${choice}/`  //fetch url
+  const url = 'https://pokeapi.co/api/v2/pokemon/'+ `${choice}/`;  //fetch url
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
@@ -116,47 +116,52 @@ function getFetch() {
     }
 
     document.querySelector('#selection').addEventListener("change", function() {
+        let pokedex = document.querySelector('#pokedex')
+        let moves = document.querySelector('#moves')
+        let type = document.querySelector('#type')
+        let sprites = document.querySelector('#sprites')
+        let stat = document.querySelector('#stat')
         if(this.value == "pokedex") {
-            document.querySelector('#pokedex').style.display = "block"
-            document.querySelector('#moves').style.display = "none"
-            document.querySelector('#type').style.display = "none"
-            document.querySelector('#sprites').style.display = "none"
-            document.querySelector('#stat').style.display = "none"
+            pokedex.style.display = "block"
+            moves.style.display = "none"
+            type.style.display = "none"
+            sprites.style.display = "none"
+            stat.style.display = "none"
             return newPokemon
         }if(this.value == "sprites") {
-            document.querySelector('#pokedex').style.display = "none"
-            document.querySelector('#moves').style.display = "none"
-            document.querySelector('#type').style.display = "none"
-            document.querySelector('#sprites').style.display = "block"
-            document.querySelector('#stat').style.display = "none"
+            pokedex.style.display = "none"
+            moves.style.display = "none"
+            type.style.display = "none"
+            sprites.style.display = "block"
+            stat.style.display = "none"
             return newPokemon
         }if(this.value == "typings") {
-            document.querySelector('#pokedex').style.display = "none"
-            document.querySelector('#moves').style.display = "none"
-            document.querySelector('#type').style.display = "block"
-            document.querySelector('#sprites').style.display = "none"
-            document.querySelector('#stat').style.display = "none"
+            pokedex.style.display = "none"
+            moves.style.display = "none"
+            type.style.display = "block"
+            sprites.style.display = "none"
+            stat.style.display = "none"
             return newPokemon
         }if(this.value == "stat") {
-            document.querySelector('#pokedex').style.display = "none"
-            document.querySelector('#moves').style.display = "none"
-            document.querySelector('#type').style.display = "none"
-            document.querySelector('#sprites').style.display = "none"
-            document.querySelector('#stat').style.display = "block"
+            pokedex.style.display = "none"
+            moves.style.display = "none"
+            type.style.display = "none"
+            sprites.style.display = "none"
+            stat.style.display = "block"
             return newPokemon
         }if(this.value == "moves") {
-            document.querySelector('#pokedex').style.display = "none"
-            document.querySelector('#moves').style.display = "block"
-            document.querySelector('#type').style.display = "none"
-            document.querySelector('#sprites').style.display = "none"
-            document.querySelector('#stat').style.display = "none"
+            pokedex.style.display = "none"
+            moves.style.display = "block"
+            type.style.display = "none"
+            sprites.style.display = "none"
+            stat.style.display = "none"
             return newPokemon
         }else{
-            document.querySelector('#pokedex').style.display = "block"
-            document.querySelector('#moves').style.display = "block"
-            document.querySelector('#type').style.display = "block"
-            document.querySelector('#sprites').style.display = "block" 
-            document.querySelector('#stat').style.display = "block"
+            pokedex.style.display = "block"
+            moves.style.display = "block"
+            type.style.display = "block"
+            sprites.style.display = "block" 
+            stat.style.display = "block"
             return newPokemon
         }
       });
