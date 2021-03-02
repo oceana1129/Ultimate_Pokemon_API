@@ -1,0 +1,42 @@
+Some data to pull from the API
+//data.name                         -> pokemon name
+//data.id                           -> pokemon id
+//data.types[0].type.name           -> pokemon type
+//data.abilities[0].ability.name    -> pokemon abilities
+// data.moves[0].move.name          -> pokemon moves
+//data.height                       -> pokemon height
+//data.weight                       -> pokemon weight
+// data.sprites.front_default       -> pokemon default front sprite
+// data.sprites.back_default        -> pokemon default back sprite
+// data.sprites.front_shiny         -> pokemon shiny front sprite
+// data.sprites.back_shiny          -> pokemon shiny back sprite
+
+
+How to create elements in your document
+//Appending an Element
+let parent = document.createElement("div")
+let p = document.createElement("p")
+parent.append(p)
+
+//Appending text
+let parent = document.createElement("div")
+parent.append("Some text")
+
+//Appending an Element and some text
+let parent = document.createElement("div")
+let p = document.createElement("p")
+parent.append("Some text", p)
+
+//Adding ClassList Name to Element
+element.classList.add("class name");  
+
+//Adding an Element as a child
+parent.appendChild(li)
+
+
+//pokemon type [""]
+if(newPokemon.type[0] === "water" && typeof newPokemon.type[1] === "undefined")
+    let weakness = ["grass"], ["electric"]
+    let strength = ["steel"], ["fire"], ["water"], ["ice"]
+else 
+    console.log('hello')

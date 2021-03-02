@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="center">
+    <header>
+        <div class="logoContainer padBot">
+            <img src="assets/Pixel_Pokemon_Logo.png" alt="">
+        </div>
+        <div class="audioContainer">
+            <img src="assets/Pixel_Audio_Empty.png" alt="" id="audio">
+        </div>
+    </header>
+    <div class="padBot buttons">
+        <div class="inputContainer">
+            <div class="top"></div>
+            <div class="middle">
+                <input type="text" placeholder="Pokemon Name..." type="text">
+            </div>
+            <div class="bottom"></div>
+        </div>
+        <button><img src="assets/Pixel_Magnifying_Glass.png" alt=""></button>
+    </div>
+    <div class="padBot selection">
+        <select id="selection">
+            <option value="all" id="all">View All</option>
+            <option value="pokedex" id="pokedexSelect">Pokedex</option>
+            <option value="sprites" id="spritesSelect">Sprites</option>
+            <option value="stat" id="statsSelect">Stats</option>
+            <option value="typings" id="typingSelect">Typings</option>
+            <option value="moves" id="movesSelect">Moves</option>
+        </select>
+    </div>
+    <section class="mainContent" >
+        <section id="pokedex" class="padBot">
+        </section>
+        <section id="sprites" class="padBot">
+        </section>
+        <section id="stat" class="padBot">
+        </section>
+        <section id="type" class="padBot">
+        </section>
+        <section id="moves" class="padBot">
+        </section>
+    </section>
+    
+
+    <script src="js/typeCheck.js"></script>
+    <script src="js/createCards.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
